@@ -6,7 +6,7 @@ export async function GET(
     { params }: { params: { id: string } }
   ) {
     if (parseInt(params.id) > comments.length) {
-      redirect("/comments");3
+      redirect("/comments");
     }
     const comment = comments.find(
       (comment) => comment.id === parseInt(params.id)
@@ -15,12 +15,7 @@ export async function GET(
   }
 
 
-export async function PATCH ( request: Request, {
-    params
-}: {
-    params: {
-        id: string
-    }
+export async function PATCH ( request: Request, {params}: {params: {id: string}
 }) {
     const body = await request.json();
     const  {text} = body;
